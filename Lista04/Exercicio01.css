@@ -1,0 +1,120 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-container {
+    background-color: rgb(0, 171, 181);
+    width: 300px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+}
+.form-container>*:not(:first-child){
+    margin-top: 15px;
+}
+.form-container>.header {
+    font-size: 1.4em;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.form-container>input,
+.form-container>textarea {
+    padding: 5px 10px;
+    border: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form-container>input::placeholder,
+.form-container>textarea::placeholder {
+    opacity: .5;
+}
+
+.form-container>button[type=submit] {
+    color: darkgray;
+    font-weight: bold;
+    align-self: center;
+    padding: 5px 40px;
+    text-transform: uppercase;
+}
+
+.big-textarea {
+    resize: none;
+    height: 120px;
+}
+
+.checkbox {
+    display: block;
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+    font-size: 0.6em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 12px;
+    width: 12px;
+    background-color: #eee;
+}
+
+.checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.checkbox input:checked ~ .checkmark {
+    background-color: white;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkbox .checkmark:after {
+    left: 4px;
+    top: 1px;
+    width: 2px;
+    height: 7px;
+    border: solid gray;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

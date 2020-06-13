@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Arial', sans-serif;
+}
+
+.form-container {
+    background-color: white;
+    border: 5px solid rgb(116, 95, 189);
+    width: 400px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.form-header {
+    background-image: url(https://picsum.photos/id/950/450/100?grayscale);
+    padding: 20px;
+    height: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-title {
+    text-transform: uppercase;
+}
+
+.form-inputs {
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+}
+.form-inputs *:not(:first-child) {
+    margin-top: 10px;
+}
+
+.form-inputs input,
+.form-inputs textarea {
+    background-color: white;
+    border: 1px solid lightgray;
+    padding: 10px 10px 10px 35px;
+    border-radius: 3px;
+    font-family: 'Arial', sans-serif;
+}
+.form-inputs input::placeholder,
+.form-inputs textarea::placeholder {
+    opacity: .5;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-inputs textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+.form-inputs input[type=submit] {
+    padding: 10px 40px;
+    text-transform: uppercase;
+    border: none;
+    background-color: rgb(116, 95, 189);
+    color: white;
+    border-radius: 20px;
+    font-size: xx-small;
+    font-weight: bold;
+    margin-top: 20px;
+
+    align-self: center;
+
+    -webkit-box-shadow: 2px 2px 5px 0px rgb(116, 95, 189);
+        -moz-box-shadow: 2px 2px 5px 0px rgb(116, 95, 189);
+            box-shadow: 2px 2px 5px 0px rgb(116, 95, 189);
+}
+
+.input-icon-container {
+    position: relative;
+    width: 100%;
+}
+.input-icon-container>*:not(i) {
+    width: 100%;
+}
+.input-icon-container>i {
+    position: absolute;
+    left: 10px;
+    transform: translateY(-1px);
+    font-size: 20px;
+    pointer-events: none;
+    opacity: .35;
+}

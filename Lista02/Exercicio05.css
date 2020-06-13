@@ -1,0 +1,11 @@
+table, th, td {
+    border: 1px solid black;
+}
+table {
+    width: 400px;
+}
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

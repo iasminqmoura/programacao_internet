@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+td {
+    vertical-align: top;
+}
+
+.maxMaior { 
+    width: 800px;
+}
+.maxMenor { 
+    width: 33%;
+}
+
+.flex-centro { 
+    display: flex; flex-direction: column; align-items: center;
+}
+
+.encher { 
+    width: 100%;
+}
+
+.collapse, .collapse tr, .collapse td, .collapse th { 
+    border-collapse: collapse; 
+}
+
+.bg-fundo {
+    background-color: #fdffdd;
+}
+
+.bg-titulo {
+    background-color: #c6ecff;
+}
+
+.bg-esquerda {
+    background-color: #9694ff;
+}
+
+.bg-meio {
+    background-color: #d8baff;
+}
+
+.bg-direita {
+    background-color: #ffbaff;
+}
+
+.justificar-texto { text-align: justify; }
+
+.padding {
+    padding: 20px;
+}
+.space { margin: 0; }

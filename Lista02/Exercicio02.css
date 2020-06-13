@@ -1,0 +1,43 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.tamanho{
+    width: 800px;
+}
+
+.flex-centro { 
+    display: flex; flex-direction: column; align-items: center;
+}
+
+.header {
+    float: left;
+    width: 100%;
+    background-color: #c0e6be;
+    padding: 10px;
+}
+
+.menu {
+    float: left;
+    padding: 5px;
+    box-sizing: border-box;
+    background-color: lightgray;
+    width: 40%;
+    min-width: 150px;
+    height: 200px;
+}
+.main {
+    float: left;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 60%;
+    height: 200px;
+}
+
+.footer {
+    float: left;
+    width: 100%;
+    background-color: #c0e6be;
+    text-align: center;
+}
