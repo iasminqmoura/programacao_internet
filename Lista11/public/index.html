@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Chat</title>
+</head>
+<body>
+    <div class="desktop">
+        <div class="barra-tarefas"></div>
+        <!-- Janela Chat -->
+        <div class="overlay flex-col f-ac f-jc">
+            <div class="borda-elevada fundo-janela flex-col" style="width: 480px; height: 360px; max-height: 360px; pointer-events: none;" id="janela-chat">
+                <div class="barra-titulo flex-row f-ac">
+                    <span class="fonte-negrito">IRC</span>
+                </div>
+                <div class="flex-fill m-4 flex-col">
+                    <div class="flex-fill flex-col borda-abaixada-interna">
+                        <div class="chat-titulo flex-col f-ac f-jc">
+                            <span class="fonte-negrito fonte-borda-preta cor-superficie">WAVE COMMUNICATOR</span>
+                        </div>
+                        <div class="flex-fill flex-row m-4">
+                            <div class="borda-abaixada-interna fundo-superficie flex-fill m-r4 flex-col">
+                                <div class="chat-mensagens-container flex-fill flex-col p-4" id="mensagens-container"></div>
+                                <form class="flex-row" style="border-top: 2px solid var(--cor-janela);" id="form-entrada">
+                                    <input type="text" class="borda-elevada-interna flex-fill" id="caixa-entrada">
+                                    <input type="submit" class="borda-elevada fonte-pequena" value="&blacktriangleright;" id="botao-entrada" disabled>
+                                </form>
+                            </div>
+                            <div class="chat-usuarios-container borda-abaixada-interna fundo-superficie flex-col p-4" id="usuarios-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Janela Config -->
+        <div class="overlay flex-col f-ac f-jc">
+            <div class="borda-elevada fundo-janela" style="transform: translate(100px, -70px);" id="janela-config">
+                <div class="barra-titulo flex-row f-ac">
+                    <span class="fonte-negrito">IRC - Config</span>
+                </div>
+                <div class="conteudo flex-col">
+                    <div class="flex-fill flex-col borda-abaixada-interna chat-config">
+                        <div class="flex-row f-ab">
+                            <span class="fonte-pequena m-r4 chat-config-label">Nome:</span>
+                            <input class="flex-fill borda-abaixada-interna chat-config-input" type="text" id="config-nome">
+                        </div>
+                        <div class="flex-row">
+                            <span class="fonte-pequena m-r4 m-t4 chat-config-label">Cor:</span>
+                            <div class="flex-col flex-fill">
+                                <div class="flex-row f-jsb">
+                                    <span botaoCor class="chat-config-cor" style="--cor-config: red"></span>
+                                    <span botaoCor class="chat-config-cor" style="--cor-config: green"></span>
+                                    <span botaoCor class="chat-config-cor" style="--cor-config: blue"></span>
+                                    <span botaoCor class="chat-config-cor" style="--cor-config: purple"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-row f-je">
+                            <input type="button" class="borda-elevada fonte-pequena p-4" value="Entrar" id="botao-confirmar-config">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

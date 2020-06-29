@@ -1,0 +1,281 @@
+:root {
+    --cor-principal: rgb(0, 0, 128);
+    --cor-sobre-principal: white;
+    --cor-fundo: rgb(0, 128, 128);
+    --cor-sobre-fundo: black;
+    --cor-superficie: white;
+    --cor-sobre-superficie: black;
+    --cor-janela: rgb(192, 192, 192);
+    --cor-sobre-janela: black;
+
+    --cor-borda-se: white;
+    --cor-borda-id: black;
+    --cor-borda-interna-se: rgb(233, 233, 233);
+    --cor-borda-interna-id: rgb(128, 128, 128);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.desktop {
+    position: absolute;
+    padding: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    background-color: var(--cor-fundo);
+    color: var(--cor-sobre-fundo);
+    font-family: Courier, monospace;
+}
+
+.conteudo {
+    padding: 4px;
+}
+
+/* ---------------------- Barras
+ * ---------------------- 
+ * ---------------------- */
+.barra-tarefas {
+    position: absolute;
+    left: 0; bottom: 0;
+    height: 36px;
+    width: 100%;
+    border-top: 2px solid var(--cor-borda-interna-se);
+    background-color: var(--cor-janela);
+}
+.barra-tarefas::before {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-top: 2px solid var(--cor-borda-se);
+    pointer-events: none;
+}
+
+.barra-titulo {
+    height: 20px;
+    background-color: var(--cor-principal);
+    color: var(--cor-sobre-principal);
+    padding: 0 8px;
+}
+
+/* ---------------------- Bordas
+ * ---------------------- 
+ * ---------------------- */
+.borda-elevada {
+    position: relative;
+    border-top: 2px solid var(--cor-borda-se);
+    border-left: 2px solid var(--cor-borda-se);
+    border-bottom: 2px solid var(--cor-borda-id);
+    border-right: 2px solid var(--cor-borda-id);
+    box-sizing: border-box;
+}
+.borda-elevada::before {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-top: 2px solid var(--cor-borda-interna-se);
+    border-left: 2px solid var(--cor-borda-interna-se);
+    border-bottom: 2px solid var(--cor-borda-interna-id);
+    border-right: 2px solid var(--cor-borda-interna-id);
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.borda-abaixada {
+    position: relative;
+    border-top: 2px solid var(--cor-borda-id);
+    border-left: 2px solid var(--cor-borda-id);
+    border-bottom: 2px solid var(--cor-borda-se);
+    border-right: 2px solid var(--cor-borda-se);
+    box-sizing: border-box;
+}
+.borda-abaixada::before {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-top: 2px solid var(--cor-borda-interna-id);
+    border-left: 2px solid var(--cor-borda-interna-id);
+    border-bottom: 2px solid var(--cor-borda-interna-se);
+    border-right: 2px solid var(--cor-borda-interna-se);
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.borda-elevada-externa {
+    border-top: 2px solid var(--cor-borda-se);
+    border-left: 2px solid var(--cor-borda-se);
+    border-bottom: 2px solid var(--cor-borda-id);
+    border-right: 2px solid var(--cor-borda-id);
+}
+.borda-elevada-interna {
+    border-top: 2px solid var(--cor-borda-interna-se);
+    border-left: 2px solid var(--cor-borda-interna-se);
+    border-bottom: 2px solid var(--cor-borda-interna-id);
+    border-right: 2px solid var(--cor-borda-interna-id);
+}
+.borda-abaixada-externa {
+    border-top: 2px solid var(--cor-borda-id);
+    border-left: 2px solid var(--cor-borda-id);
+    border-bottom: 2px solid var(--cor-borda-se);
+    border-right: 2px solid var(--cor-borda-se);
+}
+.borda-abaixada-interna {
+    border-top: 2px solid var(--cor-borda-interna-id);
+    border-left: 2px solid var(--cor-borda-interna-id);
+    border-bottom: 2px solid var(--cor-borda-interna-se);
+    border-right: 2px solid var(--cor-borda-interna-se);
+}
+
+/* ---------------------- Cores
+ * ---------------------- 
+ * ---------------------- */
+.fundo-superficie {
+    background-color: var(--cor-superficie);
+    color: var(--cor-sobre-superficie);
+}
+.fundo-janela {
+    background-color: var(--cor-janela);
+    color: var(--cor-sobre-janela);
+}
+.fundo-principal {
+    background-color: var(--cor-principal);
+    color: var(--cor-sobre-principal);
+}
+.cor-superficie { color: var(--cor-superficie); }
+.cor-janela { color: var(--cor-janela); }
+.cor-principal { color: var(--cor-principal); }
+.cor-sobre-superficie { color: var(--cor-sobre-superficie); }
+.cor-sobre-janela { color: var(--cor-sobre-janela); }
+.cor-sobre-principal { color: var(--cor-sobre-principal); }
+
+/* ---------------------- Flex
+ * ---------------------- 
+ * ---------------------- */
+.flex-column, .flex-col, .flex-c {
+    display: flex;
+    flex-direction: column;
+}
+.flex-row, .flex-r {
+    display: flex;
+    flex-direction: row;
+}
+.f-column, .f-col, .f-c { flex-direction: column; }
+.f-row, .f-r { flex-direction: row; }
+.flex-as, .f-as { align-items: flex-start; }
+.flex-ae, .f-ae { align-items: flex-end; }
+.flex-ac, .f-ac { align-items: center; }
+.flex-at, .f-at { align-items: stretch; }
+.flex-ab, .f-ab { align-items: baseline; }
+.flex-js, .f-js { justify-content: flex-start; }
+.flex-je, .f-je { justify-content: flex-end; }
+.flex-jc, .f-jc { justify-content: center; }
+.flex-jt, .f-jt { justify-content: stretch; }
+.flex-jb, .f-jb { justify-content: baseline; }
+.flex-jsb, .f-jsb { justify-content: space-between; }
+.flex-jsa, .f-jsa { justify-content: space-around; }
+.flex-jse, .f-jse { justify-content: space-evenly; }
+.flex-fill, .f-f { flex: 1 1 auto; }
+
+/* ---------------------- Fonte
+ * ---------------------- 
+ * ---------------------- */
+.fonte-menor, .ft-ma { font-size: smaller; }
+.fonte-pequena, .ft-p { font-size: small; }
+.fonte-xpequena, .ft-ppp { font-size: x-small; }
+.fonte-xxpequena, .ft-ppp { font-size: xx-small; }
+.fonte-maior, .ft-me { font-size: larger; }
+.fonte-grande, .ft-g { font-size: large; }
+.fonte-xgrande, .ft-gg { font-size: x-large; }
+.fonte-xxgrande, .ft-ggg { font-size: xx-large; }
+.fonte-negrito, .ft-n, .ft-b { font-weight: bold; }
+
+.fonte-borda-preta { text-shadow: rgb(0, 0, 0) 2px 0px 0px, rgb(0, 0, 0) 1.75517px 0.958851px 0px, rgb(0, 0, 0) 1.0806px 1.68294px 0px, rgb(0, 0, 0) 0.141474px 1.99499px 0px, rgb(0, 0, 0) -0.832294px 1.81859px 0px, rgb(0, 0, 0) -1.60229px 1.19694px 0px, rgb(0, 0, 0) -1.97998px 0.28224px 0px, rgb(0, 0, 0) -1.87291px -0.701566px 0px, rgb(0, 0, 0) -1.30729px -1.5136px 0px, rgb(0, 0, 0) -0.421592px -1.95506px 0px, rgb(0, 0, 0) 0.567324px -1.91785px 0px, rgb(0, 0, 0) 1.41734px -1.41108px 0px, rgb(0, 0, 0) 1.92034px -0.558831px 0px; }
+
+/* ---------------------- Espaçamento
+ * ---------------------- 
+ * ---------------------- */
+.margin-4, .m-4 { margin: 4px; }
+.margin-top-4, .m-t4 { margin-top: 4px; }
+.margin-left-4, .m-l4 { margin-left: 4px; }
+.margin-bottom-4, .m-b4 { margin-bottom: 4px; }
+.margin-right-4, .m-r4 { margin-right: 4px; }
+
+.padding-4, .p-4 { padding: 4px; }
+.padding-top-4, .p-t4 { padding-top: 4px; }
+.padding-left-4, .p-l4 { padding-left: 4px; }
+.padding-bottom-4, .p-b4 { padding-bottom: 4px; }
+.padding-right-4, .p-r4 { padding-right: 4px; }
+
+/* ---------------------- Chat
+ * ---------------------- 
+ * ---------------------- */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.overlay>* {
+    pointer-events: initial;
+}
+
+.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+.relative {
+    position: relative;
+}
+
+.chat-titulo {
+    background-image: url('https://media1.giphy.com/media/l3vRjhLaawhHuuGTS/giphy.gif');
+    background-position: center;
+    height: 60px;
+}
+
+.chat-mensagens-container {
+    max-height: calc(100% - 24px);
+    overflow-y: auto;
+}
+
+.chat-usuarios-container {
+    width: 150px;
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.chat-config { padding: 8px; }
+.chat-config>*:not(:last-child) { margin-bottom: 8px; }
+.chat-config-label { min-width: 70px; max-width: 70px; }
+.chat-config-input { min-width: 0; }
+.chat-config-cor {
+    width: 24px;
+    height: 24px;
+    background-color: var(--cor-config);
+    border-top: 2px solid var(--cor-borda-interna-se);
+    border-left: 2px solid var(--cor-borda-interna-se);
+    border-bottom: 2px solid var(--cor-borda-interna-id);
+    border-right: 2px solid var(--cor-borda-interna-id);
+}
+.chat-config-cor[checked] {
+    border-top: 2px solid var(--cor-borda-interna-id);
+    border-left: 2px solid var(--cor-borda-interna-id);
+    border-bottom: 2px solid var(--cor-borda-interna-se);
+    border-right: 2px solid var(--cor-borda-interna-se);
+}
