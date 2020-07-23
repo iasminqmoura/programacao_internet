@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Jogo Multiplayer</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="/socket.io/socket.io.js"></script>
+    </head>
+    <body>
+        <div class="full-page connect" id="connect">
+            <form class="connect-form" id="form">
+                <span style="font-size: large; font-weight: bold; padding-bottom: 8px;">Joguinho</span>
+                <span>Nome:</span>
+                <input type="text" id="name">
+                <span>Cor:</span>
+                <input type="color" id="color" value="#0066FF">
+                <input type="submit" value="Entrar" style="margin-top: 12px;">
+            </form>
+        </div>
+        <div class="full-page game" id="game" style="display: none;">
+            <div class="game-wrapper">
+                <canvas id="screen" width="10" height="10"></canvas>
+                <div class="scoreboard" id="scoreboard">
+                    <span style="font-size: large; font-weight: bold; padding-bottom: 8px;">Placar</span>
+                    <span class="scoreboard-player">1º (${score}pts) <div class="player-color"></div> ${name}</span>
+                </div>
+            </div>
+        </div>
+
+        <script src="index.js" type="module"></script>
+    </body>
+</html>
